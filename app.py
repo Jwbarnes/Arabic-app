@@ -5,6 +5,33 @@ from deep_translator import GoogleTranslator
 from gtts import gTTS
 import re
 
+import streamlit as st
+import nltk
+from nltk.stem.isri import ISRIStemmer
+from deep_translator import GoogleTranslator
+from gtts import gTTS
+import re
+import os
+
+# --- 1. CONFIGURATION ---
+st.set_page_config(page_title="Arabic Etymologist", page_icon="🕌")
+
+# --- NLTK DATA FIX ---
+# We point NLTK to a local folder to avoid permission errors
+nltk_data_dir = os.path.join(os.getcwd(), 'nltk_data')
+if not os.path.exists(nltk_data_dir):
+    os.makedirs(nltk_data_dir)
+nltk.data.path.append(nltk_data_dir)
+
+# Download 'punkt' specifically to this folder
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', download_dir=nltk_data_dir)
+    nltk.download('punkt_tab', download_dir=nltk_data_dir) # Just in case
+
+# ... The rest of your code (Section 2: The Logic) continues here ...
+
 # --- 1. CONFIGURATION ---
 st.set_page_config(page_title="Arabic Etymologist", page_icon="🕌")
 
