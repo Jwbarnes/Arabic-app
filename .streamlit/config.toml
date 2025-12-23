@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#B48E43"    # Gold/Bronze (for buttons & highlights)
+backgroundColor = "#FDF6E3" # Parchment/Cream (Main background)
+secondaryBackgroundColor = "#EEE8D5" # Slightly darker beige (Sidebar)
+textColor = "#3C3C3C"       # Dark Charcoal (Easy to read text)
+font = "serif"              # sophisticated serif font
